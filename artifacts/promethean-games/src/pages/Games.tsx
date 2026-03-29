@@ -54,7 +54,7 @@ export default function Games() {
               title="Par for the Course: Quantum" 
               description="An all-new 18-hole deck with called pockets — players must sink each ball into its assigned pocket. The ultimate test of precision and shot-making under pressure."
               tags={["Billiards", "Called Pockets", "18 Holes", "Advanced"]}
-              image={`${import.meta.env.BASE_URL}images/placeholder-2.png`}
+              image={`${import.meta.env.BASE_URL}images/pftc-quantum.png`}
               isComingSoon
             />
             <div className="border border-dashed border-border/50 rounded-sm flex flex-col items-center justify-center p-8 text-center bg-card/20 min-h-[400px]">
