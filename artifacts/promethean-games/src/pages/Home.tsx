@@ -233,7 +233,7 @@ export default function Home() {
               { icon: Swords, title: "Original Designs", desc: "Fresh mechanics you haven't seen before." },
               { icon: Target, title: "Skill Over Luck", desc: "Your choices dictate the outcome, not the dice." },
               { icon: Shield, title: "Built to Last", desc: "Premium materials engineered for countless replays." },
-              { icon: Globe, title: "Play Anywhere", desc: "Portable formats perfect for the pub, cafe, or home." }
+              { icon: Globe, title: "Play Anywhere", desc: "Portable formats perfect for the bar, league, tournaments or at home." }
             ].map((feature, idx) => (
               <motion.div 
                 key={idx}
