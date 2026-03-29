@@ -7,29 +7,34 @@ interface GameCardProps {
   title: string;
   description: string;
   tags: string[];
-  image: string;
+  image?: string;
+  customImage?: React.ReactNode;
   href?: string;
   isComingSoon?: boolean;
 }
 
-export function GameCard({ title, description, tags, image, href = "/games", isComingSoon }: GameCardProps) {
+export function GameCard({ title, description, tags, image, customImage, href = "/games", isComingSoon }: GameCardProps) {
   return (
     <motion.div 
       whileHover={{ y: -8 }}
-      className="group relative bg-card border border-border rounded-sm overflow-hidden flex flex-col transition-all duration-500 hover:border-primary/50 hover:shadow-[0_8px_30px_rgba(245,158,11,0.1)]"
+      className="group relative bg-card border border-border rounded-sm overflow-hidden flex flex-col transition-all duration-500 hover:border-primary/50 hover:shadow-[0_8px_30px_rgba(209,17,17,0.1)]"
     >
       <div className="relative aspect-video overflow-hidden bg-muted">
-        <img 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-        />
+        {customImage ? (
+          <div className="absolute inset-0">{customImage}</div>
+        ) : (
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+          />
+        )}
         {isComingSoon && (
           <div className="absolute top-4 right-4 bg-background/90 backdrop-blur border border-primary text-primary text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-sm">
             Coming Soon
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80 pointer-events-none" />
       </div>
       
       <div className="p-6 flex flex-col flex-grow">

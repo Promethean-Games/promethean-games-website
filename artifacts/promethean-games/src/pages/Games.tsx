@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { GameCard } from "@/components/ui/GameCard";
+import { FannedCards } from "@/components/ui/FannedCards";
 
 export default function Games() {
   return (
@@ -47,7 +48,7 @@ export default function Games() {
               title="Par for the Course: Full Swing" 
               description="A 54-card poker deck expanding the course across 4 unique editions. More holes, more strategy, and a whole new way to play your favorite billiards training game."
               tags={["Billiards", "54 Cards", "4 Editions", "Competitive"]}
-              image={`${import.meta.env.BASE_URL}images/placeholder-1.png`}
+              customImage={<FannedCards />}
               isComingSoon
             />
             <GameCard 
