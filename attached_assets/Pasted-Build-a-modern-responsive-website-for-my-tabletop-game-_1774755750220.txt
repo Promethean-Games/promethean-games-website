@@ -1,0 +1,85 @@
+Build a modern, responsive website for my tabletop game company, Promethean Games.
+
+About the brand:
+- Promethean Games creates original games with a clever, competitive, and approachable feel.
+- The flagship product is “Par for the Course,” a billiards training and social game that blends pool and golf-inspired scoring.
+- The site should feel sharp, cinematic, and clean without being overly corporate.
+- Tone should be confident, playful, and polished.
+
+Primary goals of the website:
+1. Introduce Promethean Games as a brand.
+2. Showcase flagship games, especially Par for the Course.
+3. Drive visitors to buy products, join an email list, and follow on social media.
+4. Present the company as creative, legitimate, and growing.
+5. Make it easy to expand later with more games, blog posts, events, and digital tools.
+
+Design direction:
+- Dark modern theme with strong contrast.
+- Subtle premium gaming aesthetic.
+- Clean typography.
+- Mobile-first and fully responsive.
+- Use sections with clear visual hierarchy and strong call-to-action buttons.
+- Avoid clutter.
+- Use tasteful visual motifs inspired by tabletop gaming, billiards, precision, and strategy.
+- No cheesy fantasy clichés.
+- No phoenix imagery.
+- Brand motif can subtly reference a hand holding a flame, innovation, strategy, and competition.
+
+Site structure:
+- Home
+- About
+- Games
+- Par for the Course product spotlight
+- Contact
+- Newsletter signup
+- Footer with social links
+
+Home page should include:
+- Hero section with headline, short subheadline, and CTA buttons
+- Brand intro section
+- Featured games section
+- Highlight section for Par for the Course
+- Why Promethean Games section
+- Email signup section
+- Footer
+
+Games page:
+- Card-style layout for current and future games
+- Include placeholder entries for multiple products
+- Make it easy to add more later
+
+Par for the Course section:
+- Explain that it is a billiards training game scored like golf
+- Emphasize skill-building, replayability, portability, and social competition
+- Include CTA buttons like “Learn More” and “Shop Now”
+
+Technical requirements:
+- Use a clean modern frontend stack suitable for Replit
+- Prefer React if appropriate
+- Organize code clearly and professionally
+- Use reusable components
+- Include placeholder images or styled mock sections where real assets can be swapped in later
+- Make text easy to edit
+- Include comments showing where I can update branding, products, links, and copy
+- Make deployment straightforward inside Replit
+
+Content requirements:
+- Write polished placeholder copy that fits the Promethean Games brand
+- Keep language concise and natural
+- Avoid hype-heavy corporate jargon
+- Make the website feel like a real indie game publisher with a focused niche and room to grow
+
+Extra features:
+- Smooth scrolling navigation
+- Sticky header
+- Hover effects on buttons and cards
+- Simple contact form
+- Newsletter email capture form UI
+- SEO-friendly structure
+- Fast-loading layout
+
+Please generate:
+1. A github repo, complete with the website code 
+2. A clear file structure
+3. Instructions for where I should swap in my real product images, logo, shop links, and contact info
+4. Sample placeholder copy for each section

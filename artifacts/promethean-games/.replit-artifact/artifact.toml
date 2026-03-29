@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Promethean Games"
+version = "1.0.0"
+id = "artifacts/promethean-games"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18572
+
+[services.development]
+run = "pnpm --filter @workspace/promethean-games run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/promethean-games", "run", "build" ]
+publicDir = "artifacts/promethean-games/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18572"
+BASE_PATH = "/"

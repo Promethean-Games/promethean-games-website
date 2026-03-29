@@ -1,0 +1,25 @@
+packages:
+  "framer-motion": "For page transitions and scroll-triggered cinematic animations"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility to merge tailwind classes safely"
+
+images:
+  - path: "artifacts/promethean-games/public/images/logo.png"
+    description: "Minimalist sharp geometric logo for Promethean Games, abstract letter P, glowing amber on transparent background"
+    aspect_ratio: "1:1"
+  - path: "artifacts/promethean-games/public/images/hero-bg.png"
+    description: "Dark cinematic billiards table felt texture, dramatic lighting, deep shadows, subtle amber volumetric light"
+    aspect_ratio: "16:9"
+  - path: "artifacts/promethean-games/public/images/par-for-the-course.png"
+    description: "Tabletop billiards training game setup, dark premium lighting, balls and cue on a striking modern surface"
+    aspect_ratio: "16:9"
+  - path: "artifacts/promethean-games/public/images/placeholder-1.png"
+    description: "Abstract cinematic tabletop game pieces, dramatic lighting, macro photography, dark moody background"
+    aspect_ratio: "16:9"
+  - path: "artifacts/promethean-games/public/images/placeholder-2.png"
+    description: "Futuristic competitive board game setup, glowing amber accents, dark premium atmosphere"
+    aspect_ratio: "16:9"
+
+notes:
+  - This is a purely frontend marketing site, no backend APIs are required.
+  - Forms use React state to simulate submission.
