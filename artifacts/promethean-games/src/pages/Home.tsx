@@ -177,7 +177,7 @@ export default function Home() {
               className="relative aspect-[4/3] rounded-sm overflow-hidden box-glow"
             >
               <img 
-                src={`${import.meta.env.BASE_URL}images/par-for-the-course.png`} 
+                src={`${import.meta.env.BASE_URL}images/table-photo.jpg`} 
                 alt="Par for the Course Gameplay" 
                 className="w-full h-full object-cover"
               />
