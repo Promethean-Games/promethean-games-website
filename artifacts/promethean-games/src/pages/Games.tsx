@@ -44,16 +44,16 @@ export default function Games() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <GameCard 
-              title="Project Eclipse" 
-              description="A tactical skirmish game of hidden movement and area control. Outmaneuver your opponents in the dark."
-              tags={["Strategy", "Skirmish", "2-4 Players"]}
+              title="Par for the Course: Full Swing" 
+              description="A 54-card poker deck expanding the course across 4 unique editions. More holes, more strategy, and a whole new way to play your favorite billiards training game."
+              tags={["Billiards", "54 Cards", "4 Editions", "Competitive"]}
               image={`${import.meta.env.BASE_URL}images/placeholder-1.png`}
               isComingSoon
             />
             <GameCard 
-              title="Neon Grid" 
-              description="Fast-paced cyber-sports action on a neon tabletop. Draft your team and execute the perfect play in under 30 minutes."
-              tags={["Sports", "Drafting", "Fast-Paced"]}
+              title="Par for the Course: Quantum" 
+              description="An all-new 18-hole deck with called pockets — players must sink each ball into its assigned pocket. The ultimate test of precision and shot-making under pressure."
+              tags={["Billiards", "Called Pockets", "18 Holes", "Advanced"]}
               image={`${import.meta.env.BASE_URL}images/placeholder-2.png`}
               isComingSoon
             />
