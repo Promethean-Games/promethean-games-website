@@ -136,7 +136,8 @@ export default function Home() {
               title="Par for the Course" 
               description="A unique billiards training game scored like golf. Build your skills, compete socially, and aim for the lowest score possible."
               tags={["Billiards", "Competitive", "Training"]}
-              image={`${import.meta.env.BASE_URL}images/par-for-the-course.png`}
+              image={`${import.meta.env.BASE_URL}images/pftc-classic.png`}
+              href="/games/par-for-the-course"
             />
             <GameCard 
               title="Project Eclipse" 

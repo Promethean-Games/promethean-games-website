@@ -28,9 +28,10 @@ export default function Games() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             <GameCard 
               title="Par for the Course" 
-              description="A unique billiards training game scored like golf. Build your skills, compete socially, and aim for the lowest score possible. Comes complete with custom scorecards, premium tracking chips, and a gorgeous rulebook designed to withstand the wear and tear of the pool hall."
-              tags={["Billiards", "Competitive", "Training", "1-4 Players", "45 Min"]}
-              image={`${import.meta.env.BASE_URL}images/par-for-the-course.png`}
+              description="A unique billiards training game scored like golf. Build your skills, compete socially, and aim for the lowest score possible. Available in 5 editions — Classic, Reracked, Sequential, Tournament, and Tee'd Off!"
+              tags={["Billiards", "Competitive", "Training", "1+ Players", "~2 hrs"]}
+              image={`${import.meta.env.BASE_URL}images/pftc-classic.png`}
+              href="/games/par-for-the-course"
             />
           </div>
         </div>

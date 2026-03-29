@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import Games from "@/pages/Games";
 import About from "@/pages/About";
+import ParForTheCourse from "@/pages/ParForTheCourse";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/games" component={Games} />
+        <Route path="/games/par-for-the-course" component={ParForTheCourse} />
         <Route path="/about" component={About} />
         <Route component={NotFound} />
       </Switch>
