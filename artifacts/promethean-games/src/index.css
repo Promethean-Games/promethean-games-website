@@ -42,8 +42,8 @@
   --primary: 38 92% 50%;
   --primary-foreground: 0 0% 4%;
   
-  /* Subtle gray secondary */
-  --secondary: 0 0% 12%;
+  /* Brand red secondary (#d11111) */
+  --secondary: 0 85% 44%;
   --secondary-foreground: 0 0% 98%;
   
   --muted: 0 0% 15%;

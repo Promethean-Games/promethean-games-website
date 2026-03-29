@@ -37,11 +37,10 @@ export function Footer() {
           <div>
             <h4 className="font-display font-bold text-foreground mb-4 uppercase tracking-wider text-sm">Socials</h4>
             <ul className="space-y-3">
-              {/* Update actual social links here */}
-              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Twitter / X</a></li>
+              {/* Update social links with your actual profile URLs */}
               <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Instagram</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Discord</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">BoardGameGeek</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Facebook</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">TikTok</a></li>
             </ul>
           </div>
         </div>

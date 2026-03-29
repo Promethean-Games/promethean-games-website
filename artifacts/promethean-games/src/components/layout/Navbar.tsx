@@ -37,8 +37,9 @@ export function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
+            {/* LOGO: swap src to update the header logo */}
             <img 
-              src={`${import.meta.env.BASE_URL}images/logo.png`} 
+              src={`${import.meta.env.BASE_URL}images/pg-logo.png`} 
               alt="Promethean Games" 
               className="w-8 h-8 transition-transform group-hover:scale-110" 
             />
