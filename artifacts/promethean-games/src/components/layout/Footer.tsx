@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { withBasePath } from "@/lib/site";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,16 +12,20 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-3 group mb-4 inline-flex">
               <img 
-                src={`${import.meta.env.BASE_URL}images/logo.png`} 
-                alt="Promethean Games Logo" 
-                className="w-6 h-6 grayscale group-hover:grayscale-0 transition-all" 
+                src={withBasePath("images/logo.png")}
+                alt="Promethean Games Logo"
+                className="w-6 h-6 grayscale group-hover:grayscale-0 transition-all"
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
               />
               <span className="font-display font-bold text-lg tracking-widest uppercase text-foreground">
                 Promethean Games
               </span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-              We create original tabletop games that blend precision, strategy, and social play. Built for players who love to compete, improve, and have fun doing it.
+              Promethean Games creates original tabletop products and educational resources for pool, billiards training, cue sports strategy, and skill-based social play.
             </p>
           </div>
 
@@ -29,18 +34,20 @@ export function Footer() {
             <ul className="space-y-3">
               <li><Link href="/" className="text-muted-foreground hover:text-primary text-sm transition-colors">Home</Link></li>
               <li><Link href="/games" className="text-muted-foreground hover:text-primary text-sm transition-colors">Our Games</Link></li>
+              <li><Link href="/games/par-for-the-course" className="text-muted-foreground hover:text-primary text-sm transition-colors">Par for the Course</Link></li>
+              <li><Link href="/learning-center" className="text-muted-foreground hover:text-primary text-sm transition-colors">Learning Center</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary text-sm transition-colors">About Us</Link></li>
-              <li><a href="/#contact" className="text-muted-foreground hover:text-primary text-sm transition-colors">Contact</a></li>
+              <li><a href={withBasePath("/#contact")} className="text-muted-foreground hover:text-primary text-sm transition-colors">Contact</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display font-bold text-foreground mb-4 uppercase tracking-wider text-sm">Socials</h4>
+            <h4 className="font-display font-bold text-foreground mb-4 uppercase tracking-wider text-sm">Top Guides</h4>
             <ul className="space-y-3">
-              {/* Update social links with your actual profile URLs */}
-              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Instagram</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">Facebook</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary text-sm transition-colors">TikTok</a></li>
+              <li><Link href="/learning-center/how-to-practice-pool" className="text-muted-foreground hover:text-primary text-sm transition-colors">How to Practice Pool</Link></li>
+              <li><Link href="/learning-center/cue-ball-control-guide" className="text-muted-foreground hover:text-primary text-sm transition-colors">Cue Ball Control Guide</Link></li>
+              <li><Link href="/learning-center/8-ball-strategy-guide" className="text-muted-foreground hover:text-primary text-sm transition-colors">8 Ball Strategy Guide</Link></li>
+              <li><Link href="/learning-center/9-ball-strategy-guide" className="text-muted-foreground hover:text-primary text-sm transition-colors">9 Ball Strategy Guide</Link></li>
             </ul>
           </div>
         </div>
@@ -50,8 +57,8 @@ export function Footer() {
             &copy; {currentYear} Promethean Games. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Privacy Policy</a>
-            <a href="#" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Terms of Service</a>
+            <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

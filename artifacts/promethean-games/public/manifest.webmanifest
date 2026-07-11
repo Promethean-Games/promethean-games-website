@@ -1,0 +1,19 @@
+{
+  "name": "Promethean Games",
+  "short_name": "Promethean Games",
+  "description": "Pool training games, billiards practice tools, and cue sports learning resources from Promethean Games.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d11111",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+

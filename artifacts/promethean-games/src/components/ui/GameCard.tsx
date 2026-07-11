@@ -8,14 +8,15 @@ interface GameCardProps {
   description: string;
   tags: string[];
   image?: string;
+  imageAlt?: string;
   customImage?: React.ReactNode;
   href?: string;
   isComingSoon?: boolean;
 }
 
-export function GameCard({ title, description, tags, image, customImage, href = "/games", isComingSoon }: GameCardProps) {
+export function GameCard({ title, description, tags, image, imageAlt, customImage, href = "/games", isComingSoon }: GameCardProps) {
   return (
-    <motion.div 
+    <motion.article
       whileHover={{ y: -8 }}
       className="group relative bg-card border border-border rounded-sm overflow-hidden flex flex-col transition-all duration-500 hover:border-primary/50 hover:shadow-[0_8px_30px_rgba(209,17,17,0.1)]"
     >
@@ -25,8 +26,10 @@ export function GameCard({ title, description, tags, image, customImage, href = 
         ) : (
           <img 
             src={image} 
-            alt={title}
+            alt={imageAlt ?? `${title} product image`}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+            loading="lazy"
+            decoding="async"
           />
         )}
         {isComingSoon && (
@@ -64,6 +67,6 @@ export function GameCard({ title, description, tags, image, customImage, href = 
           )}
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

@@ -10,6 +10,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        primary:
+          "bg-primary text-primary-foreground border border-primary",
         default:
            // @replit: no hover, and add primary border
            "bg-primary text-primary-foreground border border-primary-border",
@@ -46,17 +48,23 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  isLoading?: boolean
+  loadingText?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ children, className, variant, size, asChild = false, isLoading = false, loadingText, disabled, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        aria-busy={isLoading || undefined}
+        disabled={disabled || isLoading}
         {...props}
-      />
+      >
+        {isLoading ? (loadingText ?? "Loading…") : children}
+      </Comp>
     )
   }
 )

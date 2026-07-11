@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/Button";
+import { withBasePath } from "@/lib/site";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +21,7 @@ export function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "Games", href: "/games" },
+    { label: "Learning Center", href: "/learning-center" },
     { label: "About", href: "/about" },
   ];
 
@@ -36,12 +38,16 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group" aria-label="Promethean Games home">
             {/* LOGO: swap src to update the header logo */}
             <img 
-              src={`${import.meta.env.BASE_URL}images/pg-logo.png`} 
-              alt="Promethean Games" 
-              className="w-8 h-8 transition-transform group-hover:scale-110" 
+              src={withBasePath("images/pg-logo.png")}
+              alt="Promethean Games"
+              className="w-8 h-8 transition-transform group-hover:scale-110"
+              width="32"
+              height="32"
+              loading="eager"
+              decoding="async"
             />
             <span className="font-display font-bold text-xl tracking-widest uppercase text-foreground group-hover:text-primary transition-colors">
               Promethean
@@ -49,7 +55,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -63,7 +69,7 @@ export function Navbar() {
               </Link>
             ))}
             <a 
-              href="/#contact"
+              href={withBasePath("/#contact")}
               className="text-sm font-display font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
             >
               Contact
@@ -71,8 +77,8 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button variant="primary" size="sm" onClick={() => window.location.href='/#newsletter'}>
-              Join Newsletter
+            <Button asChild variant="primary" size="sm">
+              <a href={withBasePath("/#newsletter")}>Join Newsletter</a>
             </Button>
           </div>
 
@@ -80,6 +86,9 @@ export function Navbar() {
           <button 
             className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -88,7 +97,7 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-2xl p-4 flex flex-col gap-4">
+        <div id="mobile-navigation" className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-2xl p-4 flex flex-col gap-4" aria-label="Mobile navigation">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -100,11 +109,18 @@ export function Navbar() {
             </Link>
           ))}
           <a 
-            href="/#contact"
+            href={withBasePath("/#contact")}
             className="text-lg font-display font-semibold uppercase tracking-wider text-foreground hover:text-primary p-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact
+          </a>
+          <a
+            href={withBasePath("/#newsletter")}
+            className="text-lg font-display font-semibold uppercase tracking-wider text-foreground hover:text-primary p-2"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Join Newsletter
           </a>
         </div>
       )}
