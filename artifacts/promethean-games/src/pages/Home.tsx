@@ -4,7 +4,6 @@ import { Link } from "wouter";
 import { Target, Swords, Shield, Globe, Send } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { GameCard } from "@/components/ui/GameCard";
-import { FannedCards } from "@/components/ui/FannedCards";
 import { FaqSection } from "@/components/content/FaqSection";
 import { ResourceCard } from "@/components/content/ResourceCard";
 import { Seo } from "@/components/seo/Seo";
@@ -192,7 +191,7 @@ export default function Home() {
                 Featured games
               </h2>
               <p className="text-muted-foreground mt-2 max-w-2xl">
-                Explore the current Promethean Games lineup, from the flagship pool training game available now to upcoming cue sports titles designed for skill-building and replayability.
+                Explore the current Promethean Games lineup, centered on the flagship pool training game built for skill-building and replayability.
               </p>
             </div>
             <Link href="/games" className="hidden md:block text-primary hover:text-primary/80 font-display font-bold uppercase tracking-wider text-sm">
@@ -200,7 +199,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-2xl">
             <GameCard
               title="Par for the Course"
               description="A golf-inspired billiards training game that builds cue ball control, shot making, strategy, and competitive confidence while making practice fun."
@@ -208,21 +207,6 @@ export default function Home() {
               image={withBasePath("images/pftc-classic.png")}
               imageAlt="Par for the Course Classic edition pool training card deck"
               href="/games/par-for-the-course"
-            />
-            <GameCard
-              title="Par for the Course: Full Swing"
-              description="A 54-card poker deck expanding the course across four editions with more holes, more decision making, and more ways to practice pool with friends."
-              tags={["Pool Practice Cards", "54 Cards", "Coming Soon"]}
-              customImage={<FannedCards />}
-              isComingSoon
-            />
-            <GameCard
-              title="Par for the Course: Quantum"
-              description="An advanced called-pocket training experience that pushes shot-making precision, planning, and pressure performance on every hole."
-              tags={["Advanced Pool Drills", "Called Pockets", "Coming Soon"]}
-              image={withBasePath("images/pftc-quantum.png")}
-              imageAlt="Par for the Course Quantum billiards training deck"
-              isComingSoon
             />
           </div>
 
@@ -407,7 +391,7 @@ export default function Home() {
               Get in touch
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Have a question about our games, pool practice ideas, billiards training, or upcoming releases? Send a message and we will follow up.
+              Have a question about our games, pool practice ideas, or billiards training? Send a message and we will follow up.
             </p>
           </div>
 

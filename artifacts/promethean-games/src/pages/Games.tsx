@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { GameCard } from "@/components/ui/GameCard";
-import { FannedCards } from "@/components/ui/FannedCards";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Seo } from "@/components/seo/Seo";
 import { Button } from "@/components/ui/Button";
@@ -23,18 +22,6 @@ export default function Games() {
         position: 1,
         name: "Par for the Course",
         url: getCanonicalUrl("/games/par-for-the-course"),
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Par for the Course: Full Swing",
-        url: getCanonicalUrl("/games"),
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Par for the Course: Quantum",
-        url: getCanonicalUrl("/games"),
       },
     ],
   };
@@ -63,7 +50,7 @@ export default function Games() {
           </h1>
           <div className="w-24 h-1 bg-primary mx-auto mb-8" />
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Every Promethean Games title is built to make practice more engaging, more social, and more skill-driven. The current lineup centers on Par for the Course and upcoming expansions for players who want smarter billiards challenges.
+            Every Promethean Games title is built to make practice more engaging, more social, and more skill-driven. The current lineup centers on Par for the Course for players who want smarter billiards challenges.
           </p>
         </motion.header>
 
@@ -106,39 +93,14 @@ export default function Games() {
           </div>
         </section>
 
-        <section aria-labelledby="in-development-heading">
-          <h2 id="in-development-heading" className="text-2xl font-display font-bold uppercase tracking-wider mb-8 flex items-center gap-4 text-muted-foreground">
-            In development
-            <span className="h-px bg-border flex-grow"></span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <GameCard
-              title="Par for the Course: Full Swing"
-              description="A 54-card poker deck expanding the course across four editions. Expect more holes, more strategy, and more ways to turn pool practice into a social competition."
-              tags={["Pool Practice Cards", "54 Cards", "Competitive"]}
-              customImage={<FannedCards />}
-              isComingSoon
-            />
-            <GameCard
-              title="Par for the Course: Quantum"
-              description="An 18-hole called-pocket challenge for advanced players who want more precision, stronger shot planning, and higher-pressure pool training."
-              tags={["Advanced Pool Drills", "Called Pockets", "Competitive"]}
-              image={withBasePath("images/pftc-quantum.png")}
-              imageAlt="Par for the Course Quantum pool training game"
-              isComingSoon
-            />
-            <div className="border border-dashed border-border/50 rounded-sm flex flex-col items-center justify-center p-8 text-center bg-card/20 min-h-[400px]">
-              <div className="w-16 h-16 rounded-full border-2 border-primary/30 flex items-center justify-center mb-4">
-                <span className="text-primary font-display font-bold text-2xl">?</span>
-              </div>
-              <h3 className="font-display font-bold text-xl uppercase tracking-wider mb-2">More training concepts ahead</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Promethean Games is building more experiences for players who love pool, billiards education, competition, and skill-first game design.
-              </p>
-              <Button asChild variant="outline">
-                <a href={withBasePath("/#newsletter")}>Get release updates</a>
-              </Button>
-            </div>
+        <section aria-labelledby="catalog-update-heading" className="mt-12">
+          <div className="border border-border/60 rounded-sm p-8 bg-card/30 text-center">
+            <h2 id="catalog-update-heading" className="text-2xl font-display font-bold uppercase tracking-wider mb-3">
+              Catalog update
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Promethean Games is currently focused on Par for the Course and expanding educational resources for players who want to improve faster.
+            </p>
           </div>
         </section>
       </div>
