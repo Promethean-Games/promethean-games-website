@@ -101,6 +101,12 @@ export default function Home() {
         structuredData={structuredData}
       />
 
+      <noscript>
+        <div className="max-w-3xl mx-auto px-4 py-6 text-center text-muted-foreground">
+          Please enable JavaScript to experience the full Promethean Games site.
+        </div>
+      </noscript>
+
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20" aria-labelledby="home-hero-heading">
         <div className="absolute inset-0 z-0">
           <img
