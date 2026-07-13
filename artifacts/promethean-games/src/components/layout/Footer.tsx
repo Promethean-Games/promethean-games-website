@@ -37,6 +37,7 @@ export function Footer() {
               <li><Link href="/games/par-for-the-course" className="text-muted-foreground hover:text-primary text-sm transition-colors">Par for the Course</Link></li>
               <li><Link href="/learning-center" className="text-muted-foreground hover:text-primary text-sm transition-colors">Learning Center</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary text-sm transition-colors">About Us</Link></li>
+              <li><Link href="/faq" className="text-muted-foreground hover:text-primary text-sm transition-colors">FAQ</Link></li>
               <li><a href={withBasePath("/#contact")} className="text-muted-foreground hover:text-primary text-sm transition-colors">Contact</a></li>
             </ul>
           </div>

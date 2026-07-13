@@ -15,6 +15,7 @@ const staticRoutes = [
   "/games",
   "/games/par-for-the-course",
   "/about",
+  "/faq",
   "/learning-center",
   "/privacy-policy",
   "/terms-of-service",

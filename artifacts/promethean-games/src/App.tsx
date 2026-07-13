@@ -2,6 +2,7 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { useState } from "react";
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,6 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import Games from "@/pages/Games";
 import About from "@/pages/About";
+import Faq from "@/pages/Faq";
 import ParForTheCourse from "@/pages/ParForTheCourse";
 import LearningCenter from "@/pages/LearningCenter";
 import LearningArticle from "@/pages/LearningArticle";
@@ -16,7 +18,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import NotFound from "@/pages/not-found";
 
-const queryClient = new QueryClient();
+export type RouterHook = () => [string, (...args: any[]) => any];
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -45,6 +47,7 @@ function Router() {
           {(params) => <LearningArticle slug={params.slug} />}
         </Route>
         <Route path="/about" component={About} />
+        <Route path="/faq" component={Faq} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
         <Route component={NotFound} />
@@ -53,11 +56,17 @@ function Router() {
   );
 }
 
-function App() {
+interface AppProps {
+  routerHook?: RouterHook;
+}
+
+function App({ routerHook }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")} hook={routerHook}>
           <Router />
         </WouterRouter>
         <Toaster />

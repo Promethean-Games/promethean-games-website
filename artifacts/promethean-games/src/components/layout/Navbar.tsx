@@ -23,6 +23,7 @@ export function Navbar() {
     { label: "Games", href: "/games" },
     { label: "Learning Center", href: "/learning-center" },
     { label: "About", href: "/about" },
+    { label: "FAQ", href: "/faq" },
   ];
 
   return (
