@@ -44,12 +44,10 @@ jobs:
         id: base_path
         shell: bash
         run: |
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          if [[ "$REPO_NAME" == *.github.io ]]; then
-            echo "base_path=/" >> "$GITHUB_OUTPUT"
-          else
-            echo "base_path=/$REPO_NAME/" >> "$GITHUB_OUTPUT"
-          fi
+          BASE_PATH="/promethean-games-website/"
+
+          echo "Using BASE_PATH=$BASE_PATH"
+          echo "base_path=$BASE_PATH" >> "$GITHUB_OUTPUT"
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
@@ -69,6 +67,8 @@ jobs:
           test -f artifacts/promethean-games/dist/public/games/par-for-the-course/index.html
           test -f artifacts/promethean-games/dist/public/faq/index.html
           ls -la artifacts/promethean-games/dist/public
+          echo "--- Built asset refs (index.html) ---"
+          grep -oE 'href="[^"]+"|src="[^"]+"' artifacts/promethean-games/dist/public/index.html | head -n 40
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
