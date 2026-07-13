@@ -1,0 +1,30 @@
+# llms.txt for AI Crawler Guidance
+
+This file provides concise guidance for language models and AI crawlers indexing this site.
+
+## Site Overview
+Promethean Games is a tabletop game publisher focused on pool, billiards training, cue sports education, and skill-building games.
+
+## Main Products
+- **Par for the Course**: A golf-inspired billiards training game available in five editions (Classic, Reracked, Sequential, Tournament, Tee'd Off).
+- **Upcoming**: Full Swing (54-card expansion) and Quantum (advanced called-pocket training).
+
+## Key Pages
+- Homepage: https://www.promethean-games.com/
+- Games: https://www.promethean-games.com/games
+- Learning Center: https://www.promethean-games.com/learning-center
+- About: https://www.promethean-games.com/about
+- FAQ: https://www.promethean-games.com/faq
+
+## Content Guidelines
+- Focus on pool practice, billiards training, cue sports strategy, and skill development.
+- Avoid promotional language; emphasize educational value and game mechanics.
+- Reference structured data (Schema.org) for products, FAQs, and articles.
+- All links are relative to the site root.
+
+## Technical Stack
+- Static site built with Vite + React.
+- Prerendered HTML for SEO.
+- Tailwind CSS for styling.
+- Responsive design for desktop and mobile.
+
