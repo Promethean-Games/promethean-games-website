@@ -67,6 +67,38 @@ export function Seo({
   faq = [],
   structuredData = [],
 }: SeoProps) {
+  // Render structured data as HTML for SSR/prerender compatibility
+  const pageStructuredData: Record<string, unknown>[] = [
+    ...getBaseStructuredData(),
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: title,
+      description,
+      url: getCanonicalUrl(path),
+      isPartOf: {
+        "@id": `${siteConfig.siteUrl}#website`,
+      },
+    },
+  ];
+
+  if (breadcrumbs.length > 1) {
+    pageStructuredData.push(getBreadcrumbStructuredData(breadcrumbs));
+  }
+
+  if (faq.length > 0) {
+    pageStructuredData.push(buildFaqStructuredData(faq));
+  }
+
+  const additionalStructuredData = Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData];
+
+  const allStructuredData = [
+    ...pageStructuredData,
+    ...additionalStructuredData.filter(Boolean),
+  ];
+
   useEffect(() => {
     const canonicalUrl = getCanonicalUrl(path);
     const imageUrl = toAbsoluteUrl(image);
@@ -102,33 +134,7 @@ export function Seo({
       .querySelectorAll(`script[type="application/ld+json"][${SCRIPT_ATTRIBUTE}]`)
       .forEach((element) => element.remove());
 
-    const pageStructuredData: Record<string, unknown>[] = [
-      ...getBaseStructuredData(),
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: title,
-        description,
-        url: canonicalUrl,
-        isPartOf: {
-          "@id": `${siteConfig.siteUrl}#website`,
-        },
-      },
-    ];
-
-    if (breadcrumbs.length > 1) {
-      pageStructuredData.push(getBreadcrumbStructuredData(breadcrumbs));
-    }
-
-    if (faq.length > 0) {
-      pageStructuredData.push(buildFaqStructuredData(faq));
-    }
-
-    const additionalStructuredData = Array.isArray(structuredData)
-      ? structuredData
-      : [structuredData];
-
-    [...pageStructuredData, ...additionalStructuredData.filter(Boolean)].forEach((item) => {
+    allStructuredData.forEach((item) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.setAttribute(SCRIPT_ATTRIBUTE, "true");
@@ -137,6 +143,17 @@ export function Seo({
     });
   }, [breadcrumbs, description, faq, image, noindex, path, structuredData, title, type]);
 
-  return null;
+  // Render structured data as script tags for SSR/prerender
+  return (
+    <>
+      {allStructuredData.map((item, idx) => (
+        <script
+          key={`schema-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
+        />
+      ))}
+    </>
+  );
 }
 
