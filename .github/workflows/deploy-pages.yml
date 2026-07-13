@@ -52,13 +52,23 @@ jobs:
           fi
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build static site
         env:
           PORT: 4173
           BASE_PATH: ${{ steps.base_path.outputs.base_path }}
         run: pnpm --filter @workspace/promethean-games run build
+
+      - name: Verify prerender output
+        shell: bash
+        run: |
+          test -f artifacts/promethean-games/dist/public/index.html
+          test -f artifacts/promethean-games/dist/public/about/index.html
+          test -f artifacts/promethean-games/dist/public/games/index.html
+          test -f artifacts/promethean-games/dist/public/games/par-for-the-course/index.html
+          test -f artifacts/promethean-games/dist/public/faq/index.html
+          ls -la artifacts/promethean-games/dist/public
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
