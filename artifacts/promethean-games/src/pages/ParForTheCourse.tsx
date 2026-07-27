@@ -87,6 +87,24 @@ const editions = [
     href: "https://www.thegamecrafter.com/games/par-for-the-course-tee-d-off",
     ctaLabel: "Buy Now",
   },
+  {
+    name: "Ricochet",
+    image: "pftc-ricochet.png",
+    description:
+      "A carom challenge where you must contact or pocket balls after hitting another object ball first. Ricochet teaches creative shot routes, table control, and how to use carom play to achieve low scores. Perfect for players who want to master the artistry of multi-ball sequences.",
+    tag: "Carom Play",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-ricochet",
+    ctaLabel: "Buy Now",
+  },
+  {
+    name: "Quantum",
+    image: "pftc-quantum.png",
+    description:
+      "Each card assigns specific numbered balls to specific pockets. You must sink each ball into its designated pocket to complete the hole. Quantum sharpens precision, pocket selection, and strategic planning under the pressure of locked-in targets.",
+    tag: "Pocket Control",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-quantum",
+    ctaLabel: "Buy Now",
+  },
 ];
 
 const buyLinks = {
