@@ -159,13 +159,6 @@ export default function Home() {
       <section className="py-24 bg-background relative border-b border-border/50" aria-labelledby="brand-intro-heading">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
-            <img
-              src={withBasePath("images/logo.png")}
-              alt="Promethean Games brand mark"
-              className="w-16 h-16 mx-auto mb-8 opacity-80"
-              loading="lazy"
-              decoding="async"
-            />
             <h2 id="brand-intro-heading" className="text-2xl md:text-4xl font-display font-light leading-relaxed text-foreground">
               Promethean Games helps pool and billiards players <span className="font-bold text-primary">compete, improve, and have more fun practicing</span> through original training games, educational guides, and skill-first design.
             </h2>
