@@ -48,8 +48,8 @@ const editions = [
     description:
       "The original Par for the Course experience. Eighteen UV-coated cards bring golf-style scoring to the billiards table in a format that is approachable, competitive, and endlessly replayable.",
     tag: "The Original",
-    href: "/#contact",
-    ctaLabel: "Ask About Classic",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-classic",
+    ctaLabel: "Buy Now",
   },
   {
     name: "Reracked",
@@ -57,8 +57,8 @@ const editions = [
     description:
       "A fresh spin on the course with new layouts and a different visual identity. Reracked keeps the core rules intact while giving returning players new pattern and speed-control problems to solve.",
     tag: "New Layouts",
-    href: "/#contact",
-    ctaLabel: "Ask About Reracked",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-reracked",
+    ctaLabel: "Buy Now",
   },
   {
     name: "Sequential",
@@ -66,8 +66,8 @@ const editions = [
     description:
       "Sequential introduces numbered shot sequences that reward planning and route discipline. It is a strong fit for players who want to practice pattern awareness and shot order under pressure.",
     tag: "Advanced Play",
-    href: "/#contact",
-    ctaLabel: "Ask About Sequential",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-sequential",
+    ctaLabel: "Buy Now",
   },
   {
     name: "Tournament",
@@ -75,8 +75,8 @@ const editions = [
     description:
       "Built for more competitive play, Tournament tightens the scoring pressure and rewards players who can stay precise, composed, and strategic over a full round.",
     tag: "Competitive",
-    href: "/#contact",
-    ctaLabel: "Ask About Tournament",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-tournament",
+    ctaLabel: "Buy Now",
   },
   {
     name: "Tee'd Off!",
@@ -84,10 +84,17 @@ const editions = [
     description:
       "The unpredictable edition. Tee'd Off! adds twists, unusual holes, and social energy that make it perfect for mixed-skill game nights, pool halls, and players who want extra chaos with their competition.",
     tag: "Party Mode",
-    href: "/#contact",
-    ctaLabel: "Ask About Tee'd Off!",
+    href: "https://www.thegamecrafter.com/games/par-for-the-course-tee-d-off",
+    ctaLabel: "Buy Now",
   },
 ];
+
+const buyLinks = {
+  classic: "https://www.thegamecrafter.com/games/par-for-the-course-classic",
+  reracked: "https://www.thegamecrafter.com/games/par-for-the-course-reracked",
+  sequential: "https://www.thegamecrafter.com/games/par-for-the-course-sequential",
+  tournament: "https://www.thegamecrafter.com/games/par-for-the-course-tournament",
+};
 
 export default function ParForTheCourse() {
   const structuredData = {
@@ -188,10 +195,10 @@ export default function ParForTheCourse() {
               <li>• Give pool players a unique cue sports gift</li>
             </ul>
             <Button asChild className="w-full mb-3">
-              <a href={withBasePath("/#contact")}>Ask About Availability</a>
+              <a href={buyLinks.classic} target="_blank" rel="noopener noreferrer">Buy Classic</a>
             </Button>
             <Button asChild variant="outline" className="w-full">
-              <a href={withBasePath("/#newsletter")}>Get Product Updates</a>
+              <a href={buyLinks.reracked} target="_blank" rel="noopener noreferrer">Buy Reracked</a>
             </Button>
           </aside>
         </section>
@@ -241,7 +248,7 @@ export default function ParForTheCourse() {
                     {edition.description}
                   </p>
                   <Button asChild variant="primary" className="w-full group/btn">
-                    <a href={withBasePath(edition.href)}>
+                    <a href={edition.href} target="_blank" rel="noopener noreferrer">
                       <ShoppingCart size={16} className="mr-2" />
                       {edition.ctaLabel}
                     </a>
@@ -268,10 +275,10 @@ export default function ParForTheCourse() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild variant="outline">
-              <a href={withBasePath("/#contact")}>Ask a Question</a>
+              <a href={buyLinks.sequential} target="_blank" rel="noopener noreferrer">Buy Sequential</a>
             </Button>
             <Button asChild>
-              <a href={withBasePath("/#newsletter")}>Stay Updated</a>
+              <a href={buyLinks.tournament} target="_blank" rel="noopener noreferrer">Buy Tournament</a>
             </Button>
           </div>
         </motion.section>
