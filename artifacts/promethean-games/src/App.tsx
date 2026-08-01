@@ -56,6 +56,7 @@ function Router() {
         <Route path="/faq" component={Faq} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms-of-service" component={TermsOfService} />
+        <Route path="/hub" component={Hub} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

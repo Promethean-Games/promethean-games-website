@@ -12,6 +12,7 @@ const resources = JSON.parse(fs.readFileSync(contentPath, "utf8"));
 
 const staticRoutes = [
   "/",
+  "/hub",
   "/games",
   "/games/par-for-the-course",
   "/about",

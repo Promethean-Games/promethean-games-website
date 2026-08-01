@@ -15,6 +15,7 @@ const routesToPrerender = [
   "/games",
   "/games/par-for-the-course",
   "/faq",
+  "/hub",
 ];
 
 // Add learning center and policy pages
