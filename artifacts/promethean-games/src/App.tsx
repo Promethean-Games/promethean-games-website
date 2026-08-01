@@ -16,6 +16,7 @@ import LearningCenter from "@/pages/LearningCenter";
 import LearningArticle from "@/pages/LearningArticle";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import Hub from "@/pages/Hub";
 import NotFound from "@/pages/not-found";
 
 export type RouterHook = () => [string, (...args: any[]) => any];
